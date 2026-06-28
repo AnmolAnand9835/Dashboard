@@ -1,14 +1,12 @@
-import { useState } from 'react'
+import { Button } from "@/components/ui/button";
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <h1>Dashboard</h1>
-    </>
-  )
+    <div className="min-h-screen flex items-center justify-center bg-slate-950">
+      <Button>Hello</Button>
+    </div>
+  );
 }
 
-export default App
+export default App;
