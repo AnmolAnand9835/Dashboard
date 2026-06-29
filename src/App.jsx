@@ -1,12 +1,21 @@
-import { Button } from "@/components/ui/button";
-import './App.css'
+import { Button } from "./components/ui/Button";
+import { AppSidebar } from "./components/AppSidebar";
+import { SidebarProvider } from "./components/ui/sidebar";
+import { Level } from "./components/Level";
+import "./App.css";
+import "./index.css";
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-950">
-      <Button>Hello</Button>
-    </div>
+    <>
+      <div className="dark">
+        <SidebarProvider>
+          <AppSidebar />
+          <div className="w-7xl text-center">
+            <Level/>
+          </div>
+        </SidebarProvider>
+      </div>
+    </>
   );
 }
-
-export default App;
