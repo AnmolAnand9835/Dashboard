@@ -34,47 +34,47 @@ export function AppSidebar() {
 
         {/* Navigation */}
         <SidebarGroup>
-          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-violet-500">Navigation</SidebarGroupLabel>
 
           <SidebarMenu>
 
             <SidebarMenuItem>
-              <SidebarMenuButton>
+              <SidebarMenuButton className="hover:bg-violet-500">
                 <Home className="h-8 w-8" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
 
             <SidebarMenuItem>
-              <SidebarMenuButton>
+              <SidebarMenuButton className="hover:bg-violet-500">
                 <Backpack className="h-8 w-8" />
                 <span>Inventory</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
 
             <SidebarMenuItem>
-              <SidebarMenuButton>
+              <SidebarMenuButton className="hover:bg-violet-500">
                 <ShoppingCart className="h-8 w-8" />
                 <span>Shop</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
 
             <SidebarMenuItem>
-              <SidebarMenuButton>
+              <SidebarMenuButton className="hover:bg-violet-500">
                 <ScrollText className="h-8 w-8" />
                 <span>Missions</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
 
             <SidebarMenuItem>
-              <SidebarMenuButton>
+              <SidebarMenuButton className="hover:bg-violet-500">
                 <Trophy className="h-8 w-8" />
                 <span>Leaderboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
 
             <SidebarMenuItem>
-              <SidebarMenuButton>
+              <SidebarMenuButton className="hover:bg-violet-500">
                 <User className="h-8 w-8" />
                 <span>Profile</span>
               </SidebarMenuButton>

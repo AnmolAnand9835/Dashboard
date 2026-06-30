@@ -11,7 +11,7 @@ export default function App() {
       <div className="dark">
         <SidebarProvider>
           <AppSidebar />
-          <div className="w-7xl text-center">
+          <div className="w-full text-center">
             <Level/>
           </div>
         </SidebarProvider>
