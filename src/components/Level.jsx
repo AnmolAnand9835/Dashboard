@@ -10,7 +10,7 @@ import { Profile } from "./Profile";
 
 export function Level() {
   return (
-    <Card className="rounded-none">
+    <Card>
       <CardHeader className="flex flex-col-reverse md:flex-row justify-between items-center gap-6 p-4 md:p-8 lg:p-10">
         <div>
         <CardTitle className="text-3xl md:text-5xl">Welcome back, sudo_why 👋</CardTitle>
