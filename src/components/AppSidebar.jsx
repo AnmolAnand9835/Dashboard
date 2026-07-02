@@ -17,6 +17,8 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
+import {Link, NavLink} from 'react-router-dom'
+
 export function AppSidebar() {
   return (
     <Sidebar>
@@ -39,45 +41,57 @@ export function AppSidebar() {
           <SidebarMenu>
 
             <SidebarMenuItem>
+              <Link to='/'>
               <SidebarMenuButton className="hover:bg-violet-500">
                 <Home className="h-8 w-8" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
+              </Link>
             </SidebarMenuItem>
 
             <SidebarMenuItem>
+              <Link to='/inventory'>
               <SidebarMenuButton className="hover:bg-violet-500">
                 <Backpack className="h-8 w-8" />
                 <span>Inventory</span>
               </SidebarMenuButton>
+              </Link>
             </SidebarMenuItem>
 
             <SidebarMenuItem>
+              <Link to='/shop'>
               <SidebarMenuButton className="hover:bg-violet-500">
                 <ShoppingCart className="h-8 w-8" />
                 <span>Shop</span>
               </SidebarMenuButton>
+              </Link>
             </SidebarMenuItem>
 
             <SidebarMenuItem>
+              <Link>
               <SidebarMenuButton className="hover:bg-violet-500">
                 <ScrollText className="h-8 w-8" />
                 <span>Missions</span>
               </SidebarMenuButton>
+              </Link>
             </SidebarMenuItem>
 
             <SidebarMenuItem>
+              <Link to="/">
               <SidebarMenuButton className="hover:bg-violet-500">
                 <Trophy className="h-8 w-8" />
                 <span>Leaderboard</span>
               </SidebarMenuButton>
+              </Link>
             </SidebarMenuItem>
 
             <SidebarMenuItem>
+              <Link to="/">
               <SidebarMenuButton className="hover:bg-violet-500">
                 <User className="h-8 w-8" />
                 <span>Profile</span>
               </SidebarMenuButton>
+              </Link>
             </SidebarMenuItem>
 
           </SidebarMenu>
