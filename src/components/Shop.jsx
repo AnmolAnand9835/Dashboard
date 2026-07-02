@@ -2,7 +2,8 @@ import { Button } from "./ui/Button";
 import { StatsCard } from "./StartCard";
 import { Level } from "./Level";
 import { Hero } from "./Hero";
-import { Backpack, ShoppingBag } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Backpack, Ellipse, ShoppingBag } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -16,17 +17,33 @@ import axios from "axios";
 
 export function Shop() {
   const [shop, setShop] = useState([]);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
-    axios
-      .get("/api/shop")
-      .then((response) => {
-        setShop(Object.values(response.data));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+    const timer = setTimeout(async () => {
+      try {
+        setLoading(true);
+        setError(false);
+
+        const response = await axios.get(`/api/shop?search=${search}`);
+        setShop(response.data);
+      } catch (error) {
+        setError(true);
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    }, 300); // Wait 300ms after the user stops typing
+
+    return () => clearTimeout(timer);
+  }, [search]);
+
+  if (error) {
+    return <h1>Somthing went wrong</h1>;
+  }
+
   return (
     <div className="w-full text-center">
       <Card>
@@ -49,11 +66,27 @@ export function Shop() {
           </Button>
         </CardHeader>
       </Card>
+
       <Card className="mt-6">
+        <CardHeader>
+          <Input
+            placeholder="search item"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </CardHeader>
+        {loading && <h1>loading...</h1>}
         <CardContent className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 mt-6 text text-white">
-          {shop.map((item) => (
-            <Hero key={item.neme} item={item.name} price={item.price} emoji={item.emoji} />
-          ))}
+          {shop.map((element, index) => {
+            return (
+              <Hero
+                key={index}
+                item={element.name}
+                emoji={element.emoji}
+                price={element.price}
+              />
+            );
+          })}
         </CardContent>
       </Card>
     </div>
