@@ -1,4 +1,3 @@
-import { Button } from "./components/ui/Button";
 import { AppSidebar } from "./components/AppSidebar";
 import { SidebarProvider } from "./components/ui/sidebar";
 import { Dashboard } from './components/Dashboard'
