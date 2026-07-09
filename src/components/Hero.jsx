@@ -22,10 +22,6 @@ transform: translateY(-4px);"
 
           <p className="text-sm text-zinc-400">{props.price}</p>
         </div>
-
-        <Button className="bg-violet-500 text-white hover:bg-violet-400 pr-5 pl-5">
-          Buy
-        </Button>
       </CardContent>
     </Card>
   );

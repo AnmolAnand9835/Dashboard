@@ -2,6 +2,9 @@ import { Button } from "./ui/Button";
 import { StatsCard } from "./StartCard";
 import { Level } from "./Level";
 import { Hero } from "./Hero";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 import {
   Backpack,
 } from "lucide-react";
@@ -15,6 +18,48 @@ import {
 import { Profile } from "./Profile";
 
 export function Inventory() {
+  const [item, setItem] = useState([]);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+useEffect(() => {
+  const fetchPlayer = async () => {
+    try {
+      setLoading(true);
+      setError(false);
+
+      const response = await axios.get(
+        "https://cyber-rpg-production.up.railway.app/api/player",
+        {
+          withCredentials: true,
+        }
+      );
+
+      console.log("noob");
+      setItem(response.data.inventory);
+    } catch (error) {
+      setError(true);
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchPlayer(); // <-- You forgot this line
+}, []);
+
+  if (error) {
+    return <h1>Somthing went wrong</h1>;
+  }
+
+  const noob = () => {
+    axios
+      .get("https://cyber-rpg-production.up.railway.app/api/player", {
+        withCredentials: true,
+      })
+      .then((res) => {setItem(res.data.inventory)})
+      .catch((err) => console.log(err.response?.data));
+  };
   return (
     <div className="w-full text-center">
       <Card>
@@ -30,8 +75,8 @@ export function Inventory() {
           </div>
 
           <Button
-            className="bg-violet-600 text-white hover:bg-violet-400
-          "
+            className="bg-violet-600 text-white hover:bg-violet-400"
+            onClick={noob}
           >
             refresh
           </Button>
@@ -39,9 +84,16 @@ export function Inventory() {
       </Card>
       <Card className="mt-6">
         <CardContent className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 mt-6 text text-white">
-          <Hero />
-          <Hero />
-          <Hero />
+          {item.map((element, index) => {
+            return (
+              <Hero
+                key={index}
+                item={element.name}
+                emoji={element.emoji}
+                price={element.price}
+              />
+            );
+          })}
         </CardContent>
       </Card>
     </div>

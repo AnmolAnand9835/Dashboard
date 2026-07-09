@@ -24,7 +24,6 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <img src="src/components/image.png" alt="logo" className="rounded-full" />
-        {/* Logo */}
         <div className="px-4 py-6 border-b">
           <h1 className="text-2xl font-bold text-violet-600">
             Cyber RPG

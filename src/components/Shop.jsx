@@ -29,6 +29,7 @@ export function Shop() {
 
         const response = await axios.get(`/api/shop?search=${search}`);
         setShop(response.data);
+        
       } catch (error) {
         setError(true);
         console.error(error);
@@ -36,6 +37,8 @@ export function Shop() {
         setLoading(false);
       }
     }, 300); // Wait 300ms after the user stops typing
+
+    console.log(shop);
 
     return () => clearTimeout(timer);
   }, [search]);

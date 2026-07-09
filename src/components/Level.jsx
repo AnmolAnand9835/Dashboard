@@ -8,19 +8,19 @@ import {
 
 import { Profile } from "./Profile";
 
-export function Level() {
+export function Level(user) {
   return (
     <Card>
       <CardHeader className="flex flex-col-reverse md:flex-row justify-between items-center gap-6 p-4 md:p-8 lg:p-10">
         <div>
-        <CardTitle className="text-3xl md:text-5xl">Welcome back, sudo_why 👋</CardTitle>
+        <CardTitle className="text-3xl md:text-5xl">Welcome back, {user.photo.username} 👋</CardTitle>
 
         <CardDescription>
           Your adventure continues. Explore the world and earn more credits.
         </CardDescription>
         </div>
 
-        <Profile className="w-min hidden md:flex h-24 w-24"/>
+        <Profile className="w-min hidden md:flex h-24 w-24" img={user.photo.avatar}/>
       </CardHeader>
     </Card>
   );

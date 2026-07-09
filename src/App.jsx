@@ -16,6 +16,7 @@ export default function App() {
           <AppSidebar />
           <Routes>
             <Route path="/" element={<Dashboard/>}/>
+            <Route path="/dashboard" element={<Dashboard/>}/>
             <Route path="/shop" element={<Shop/>}/>
             <Route path="/inventory" element={<Inventory/>}/>
           </Routes>
