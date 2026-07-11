@@ -5,6 +5,7 @@ import {
   Trophy,
   ScrollText,
   User,
+  LogIn,
 } from "lucide-react";
 
 import {
@@ -67,16 +68,16 @@ export function AppSidebar() {
             </SidebarMenuItem>
 
             <SidebarMenuItem>
-              <Link>
+              <Link to='/login'>
               <SidebarMenuButton className="hover:bg-violet-500">
-                <ScrollText className="h-8 w-8" />
-                <span>Missions</span>
+                <LogIn className="h-8 w-8" />
+                <span>log in</span>
               </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>
 
             <SidebarMenuItem>
-              <Link to="/">
+              <Link to="/leaderboard">
               <SidebarMenuButton className="hover:bg-violet-500">
                 <Trophy className="h-8 w-8" />
                 <span>Leaderboard</span>

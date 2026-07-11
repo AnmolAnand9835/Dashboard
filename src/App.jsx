@@ -7,6 +7,8 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import "./index.css";
 import { Level } from "./components/Level";
+import Login from "./components/login";
+import Leaderboard from "./components/Leaderboard";
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
             <Route path="/dashboard" element={<Dashboard/>}/>
             <Route path="/shop" element={<Shop/>}/>
             <Route path="/inventory" element={<Inventory/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/leaderboard" element={<Leaderboard/>}/>
           </Routes>
         </SidebarProvider>
       </div>
