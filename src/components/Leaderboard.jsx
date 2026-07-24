@@ -41,7 +41,7 @@ export default function Leaderboard() {
         setError(false);
 
         const response = await axios.get(
-          "https://cyber-rpg-production.up.railway.app/api/leaderboard",
+          "https://cyber-rpg.onrender.com/api/leaderboard",
         );
 
         setLeaderboard(response.data);
@@ -101,7 +101,7 @@ export default function Leaderboard() {
                 <h2 className="font-bold text-lg">
                   {player.username}
 
-                  {player.username === "sudo_why" && (
+                  {player.username === user.username && (
                     <span className="ml-2 text-[#7050F0]">YOU</span>
                   )}
                 </h2>

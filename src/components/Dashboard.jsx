@@ -18,13 +18,11 @@ useEffect(() => {
       setError(false);
 
       const response = await axios.get(
-        "https://cyber-rpg-production.up.railway.app/api/player",
-        {
-          withCredentials: true,
-        }
+        "https://cyber-rpg.onrender.com/api/players",
+
       );
 
-      setUser(response.data);
+      setUser(response.data); 
     } catch (error) {
       setError(true);
       console.error(error);

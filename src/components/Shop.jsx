@@ -27,7 +27,7 @@ export function Shop() {
         setLoading(true);
         setError(false);
 
-        const response = await axios.get(`/api/shop?search=${search}`);
+        const response = await axios.get(`https://cyber-rpg.onrender.com/api/shop?search=${search}`);
         setShop(response.data);
         
       } catch (error) {

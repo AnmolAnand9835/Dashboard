@@ -21,10 +21,11 @@ import {
 import {Link, NavLink} from 'react-router-dom'
 
 export function AppSidebar() {
+
   return (
     <Sidebar>
+      <SidebarTrigger />
       <SidebarContent>
-        <img src="src/components/image.png" alt="logo" className="rounded-full" />
         <div className="px-4 py-6 border-b">
           <h1 className="text-2xl font-bold text-violet-600">
             Cyber RPG

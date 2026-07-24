@@ -19,7 +19,7 @@ const Login = () => {
               className="p-6 bg-violet-700 text-white hover:bg-violet-600"
               onClick={() => {
                 window.location.href =
-                  "https://cyber-rpg-production.up.railway.app/auth/discord";
+                  "https://cyber-rpg.onrender.com/auth/discord";
               }}
             >
               Login with Discord <LogIn />

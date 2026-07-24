@@ -54,7 +54,7 @@ useEffect(() => {
 
   const noob = () => {
     axios
-      .get("https://cyber-rpg-production.up.railway.app/api/player", {
+      .get("https://cyber-rpg.onrender.com/api/player", {
         withCredentials: true,
       })
       .then((res) => {setItem(res.data.inventory)})
